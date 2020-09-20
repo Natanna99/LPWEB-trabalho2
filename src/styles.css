@@ -1,0 +1,7 @@
+li {
+    list-style:none;
+}
+#completas li {
+    text-decoration: line-through;
+    color: #888;
+}

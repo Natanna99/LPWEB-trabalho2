@@ -1,0 +1,27 @@
+<h1>Lista de Tarefas</h1>
+<h3>Adicionar Tarefa</h3>
+<form #cadastro='ngForm' (submit)="salvar()">
+  <input type='text' id='nomeTarefa' name='nomeTarefa' [(ngModel)]='nomeTarefa' required>
+  <button type='submit' class='btn btn-primary'>Salvar</button> 
+</form>
+<h3>Pendentes</h3>
+<ul>
+  <li *ngFor='let item of tarefas'>
+    <input type="checkbox" (click)='executada(item)' name="tarefas" >
+    {{item.nomeTarefa}} - <button type='submit' class='btn btn-primary' (click)= "editar(item)">Editar</button> 
+    <button type='submit' class='btn btn-primary' (click)= "excluir(item)">Excluir</button>
+  </li>
+</ul>
+<h3>Concluidas</h3>
+<ul id="completas">
+  <li *ngFor='let item of executadas'>
+    <input type="checkbox" name="tarefas" checked>
+    {{item.nomeTarefa}}
+  </li>
+</ul>
+
+
+
+
+
+
